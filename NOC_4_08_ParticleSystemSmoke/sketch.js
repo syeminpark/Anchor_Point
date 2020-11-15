@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1040, 360);
+  createCanvas(640, 360);
   ps = new ParticleSystem(0, createVector(width / 2, height - 75), img);
 }
 
