@@ -6,7 +6,7 @@ class Particle {
 
   constructor(pos, img) {
     this.acc = createVector(0, 0);
-    let vx = randomGaussian() * 0.3;
+    let vx = randomGaussian() * 0.5;
     let vy = randomGaussian() * 0.3 - 1.0;
     this.vel = createVector(vx, vy);
     this.pos = pos.copy();
