@@ -22,8 +22,7 @@ function setup() {
 
 function draw() {
 
-  // Try additive blending!
-  // You also need clear or else the colors will accumulate between frames
+
   // blendMode(ADD);
   // clear();
 
@@ -56,8 +55,26 @@ function drawVector(v, pos, scayl) {
   // Calculate length of vector & scale it to be bigger or smaller if necessary
   let len = v.mag() * scayl;
   // Draw three lines to make an arrow (draw pointing up since we've rotate to the proper direction)
-  line(0, 0, len, 0);
+let ypos=-ps.origin.y+pos.y
+let flagpos1=createVector(0+len,0)
+let flagpos2=createVector(50+len,25)
+let flagpos3=createVector(0+len,50)
+
+if (mouseX>=width/2){
+    ypos=ypos*-1;
+    flagpos2.y*=-1;
+    flagpos3.y*=-1;
+  }
+
+
+  line(len, flagpos1.y, 0, ypos);
+  push()
+  fill(255,0,0,255)
+  triangle(flagpos1.x,flagpos1.y,len+flagpos2.x,flagpos2.y,flagpos3.x,flagpos3.y)
+
   line(len, 0, len - arrowsize, +arrowsize / 2);
   line(len, 0, len - arrowsize, -arrowsize / 2);
+  pop()
+
   pop();
 }
