@@ -23,8 +23,7 @@ function setup() {
 function draw() {
 
 
-  // blendMode(ADD);
-  // clear();
+
 
   background(0);
 

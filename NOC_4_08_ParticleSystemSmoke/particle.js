@@ -31,15 +31,16 @@ class Particle {
   update() {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
-    this.lifespan -= 2.5;
+    this.lifespan -=2.5;
     this.acc.mult(0); // clear Acceleration
   }
 
   render() {
 
+
     fill(255,250,200,this.lifespan);
     noStroke();
-    ellipse(this.pos.x,this.pos.y,img.width,img.height);
+    ellipse(this.pos.x,this.pos.y,img.width/this.lifespan*100,img.height);
   }
 
   // Is the particle still useful?
